@@ -10,8 +10,11 @@ app.get( "/", (req,res) => {
 
 app.post("/",(req,res) => {
   res.send("i am a post request")
-}
-)
+});
+
+app.get("/index",(req,res) => {
+  res.sendFile("templates/index.html",{root: __dirname})
+})
 
 app.listen(port,() => {
   console.log(`app listen on port ${port}`)
